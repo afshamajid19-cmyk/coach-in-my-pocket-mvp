@@ -8,7 +8,10 @@ load_dotenv()
 app = Flask(__name__)
 
 # OpenAI client from env var
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=api_key) if api_key else None
+
 
 # === SWAPPABLE SYSTEM PROMPT ===
 SYSTEM_PROMPT = """
@@ -664,3 +667,4 @@ def index():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
+
