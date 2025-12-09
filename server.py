@@ -192,7 +192,7 @@ def coach():
         model="gpt-4o",
         messages=messages,
         temperature=0.7,
-        max_tokens=550,
+        max_tokens=350,
         stop=["\n\n", "User:"]
     )
 
@@ -215,6 +215,7 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
+
 
 
 
